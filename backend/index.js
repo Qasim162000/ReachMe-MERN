@@ -11,7 +11,7 @@ const port = process.env.PORT || 6000;
 app.use(cors())
 app.use(express.json());
 
-// Our Endpoints
+// Available Endpoints
 app.use('/api/auth', require("./routes/auth"));
 
 
