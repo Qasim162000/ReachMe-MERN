@@ -30,4 +30,5 @@ router.post('/createuser',
         }
     })
 
-    //Router2: Authenticate an existing user using POST:"api/auth/login". No Login required
+
+module.exports = router;

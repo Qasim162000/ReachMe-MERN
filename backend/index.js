@@ -1,16 +1,20 @@
+const connectToMongo = require('./db')
 const express = require('express')
 require('dotenv').config();
-const connectToMongo = require('./db')
+const cors = require('cors')
 
 connectToMongo()
 const app = express()
 const port = process.env.PORT || 6000;
 
-// Our Endpoints
-app.use('/api/auth', "./routes/auth");
 
 app.use(cors())
+app.use(express.json());
+
+// Our Endpoints
+app.use('/api/auth', require("./routes/auth"));
+
 
 app.listen(port, () => {
-    console.log(`Reach Me Backend listening on port: ${port}`)
+    console.log(`Reach Me Backend listening on port: http://localhost:${port}`)
 })
