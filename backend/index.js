@@ -6,9 +6,10 @@ connectToMongo()
 const app = express()
 const port = process.env.PORT || 6000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+// Our Endpoints
+app.use('/api/auth', "./routes/auth");
+
+app.use(cors())
 
 app.listen(port, () => {
     console.log(`Reach Me Backend listening on port: ${port}`)
